@@ -15,6 +15,12 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ currentWeather }) => {
       <Text type="Temperature">
         {currentWeather.currentTemperature.toFixed(1)}&#176;
       </Text>
+      <img
+        src={`/src/assets/images/${findWeatherIcon(
+          currentWeather.weather
+        )}.png`}
+        alt="weather icon"
+      />
       <Meta currentWeather={currentWeather} />
     </Card>
   )

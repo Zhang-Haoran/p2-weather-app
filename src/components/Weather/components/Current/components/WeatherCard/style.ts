@@ -6,9 +6,6 @@ export const Card = styled.div<StyleComponentProps>`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  &:hover {
-    box-shadow: 0 0.2rem 0.5rem 0 black;
-  }
   ${({ type }) =>
     type === 'Weather' &&
     css`
