@@ -1,12 +1,10 @@
 import styled from 'styled-components'
-import { FormProps } from '../../../../types'
 //搜索区域样式
 
-export const Form = styled.form<FormProps>`
+export const Form = styled.form`
   background: white;
   opacity: 65%;
   position: relative;
-  top: ${({ isResultFetched }) => (isResultFetched ? '5%' : '40%')};
   width: 30rem;
   min-height: 3rem;
   margin: 0 auto 1.5rem auto;

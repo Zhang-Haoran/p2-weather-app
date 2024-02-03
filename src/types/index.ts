@@ -19,12 +19,7 @@ export interface WeatherForecastResponse {
   ]
 }
 
-export interface FormProps {
-  isResultFetched: boolean
-}
-
 export interface SearchBarProps {
-  isResultFetched: boolean
   value: string
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   submit: (event: React.FormEvent<HTMLFormElement>) => void
@@ -55,7 +50,7 @@ export interface StyleComponentProps {
   type: string
 }
 
-export interface WindCardProps {
+export interface MetaProps {
   currentWeather: CurrentWeather
 }
 
@@ -63,7 +58,6 @@ export interface CurrentProps {
   currentWeather: CurrentWeather
 }
 
-export interface ContainerProps {
+export interface BackgroundProps {
   img: string
-  isResultFetched: boolean
 }

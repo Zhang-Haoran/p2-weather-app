@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { getCurrentWeatherFromAPI, getForecastWeatherFromAPI } from '../../api'
-import { Container, Right } from './style'
+import { Background, Container } from './style'
 import Current from './components/Current/Current'
 import Forecast from './components/Forecast/Forecast'
 import SearchBar from './components/SearchBar/SearchBar'
 import { CurrentWeather, WeatherForecast } from '../../types'
-import bg from './img/bg.png'
+import bg from './images/bg.png'
 
 // 主页组件
 const Weather = () => {
@@ -38,28 +38,32 @@ const Weather = () => {
       setForecastWeather(weatherObject as WeatherForecast[])
     })
   }
-
-  //短路计算，当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
+  useEffect(() => {
+    //设置默认城市
+    getCurrentWeatherFromAPI('Melbourne,AU').then((weatherObject) => {
+      setCurrentWeather(weatherObject as CurrentWeather)
+    })
+    getForecastWeatherFromAPI('Melbourne,AU').then((weatherObject) => {
+      setForecastWeather(weatherObject as WeatherForecast[])
+    })
+  }, [])
+  //当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
   return (
-    <Right>
-      <Container
-        img={bg}
-        isResultFetched={currentWeather && forecastWeather ? true : false}
-      >
-        <SearchBar
-          value={searchBarValue}
-          onChange={handleSearchBarChange}
-          submit={handleSubmit}
-          isResultFetched={currentWeather && forecastWeather ? true : false}
-        />
+    <Background img={bg}>
+      <Container>
+        {/* <SearchBar
+        value={searchBarValue}
+        onChange={handleSearchBarChange}
+        submit={handleSubmit}
+      /> */}
         {currentWeather && forecastWeather && (
           <Current currentWeather={currentWeather} />
         )}
-        {currentWeather && forecastWeather && (
-          <Forecast forecastWeather={forecastWeather} />
-        )}
+        {/* {currentWeather && forecastWeather && (
+        <Forecast forecastWeather={forecastWeather} />
+      )} */}
       </Container>
-    </Right>
+    </Background>
   )
 }
 export default Weather

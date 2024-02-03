@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components'
-import { StyleComponentProps } from '../../../../../../types'
+import { StyleComponentProps } from '../../../../../../../../types'
 
 export const Card = styled.div<StyleComponentProps>`
   border-radius: 1rem;
   padding: 1rem;
+  display: flex;
   &:hover {
     box-shadow: 0 0.2rem 0.5rem 0 black;
   }
