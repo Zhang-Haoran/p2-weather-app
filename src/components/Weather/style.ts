@@ -14,8 +14,11 @@ export const Background = styled.div<BackgroundProps>`
 `
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  background-color: white;
+  background-color: rgb(241, 240, 252);
   border-radius: 1.5rem;
+`
+export const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
 `

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { getCurrentWeatherFromAPI, getForecastWeatherFromAPI } from '../../api'
-import { Background, Container } from './style'
+import { Background, Container, Flex } from './style'
 import Current from './components/Current/Current'
 import Forecast from './components/Forecast/Forecast'
 import SearchBar from './components/SearchBar/SearchBar'
@@ -50,19 +50,19 @@ const Weather = () => {
   //当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
   return (
     <Background img={bg}>
-      <Container>
-        {/* <SearchBar
-        value={searchBarValue}
-        onChange={handleSearchBarChange}
-        submit={handleSubmit}
-      /> */}
-        {currentWeather && forecastWeather && (
+      {currentWeather && forecastWeather && (
+        <Container>
           <Current currentWeather={currentWeather} />
-        )}
-        {/* {currentWeather && forecastWeather && (
-        <Forecast forecastWeather={forecastWeather} />
-      )} */}
-      </Container>
+          <Flex>
+            <Forecast forecastWeather={forecastWeather} />
+            <SearchBar
+              value={searchBarValue}
+              onChange={handleSearchBarChange}
+              submit={handleSubmit}
+            />
+          </Flex>
+        </Container>
+      )}
     </Background>
   )
 }

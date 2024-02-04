@@ -7,12 +7,10 @@ export const Container = styled.section`
 
 export const Body = styled.div`
   display: flex;
-  overflow-x: scroll;
 `
 
 export const Card = styled.div`
   background-color: white;
-  opacity: 0.5;
   margin: 0 1.5rem;
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -31,4 +29,7 @@ export const Text = styled.p`
 export const Title = styled.h2`
   font-size: 3rem;
   margin: 0;
+`
+export const WeatherIcon = styled.img`
+  align-self: center;
 `

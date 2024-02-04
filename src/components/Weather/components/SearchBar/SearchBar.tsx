@@ -11,7 +11,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, submit }) => {
       </Icon>
       <Input
         type="text"
-        placeholder="Enter your city (eg. Melbourne,au)"
+        placeholder="Search for a city"
         value={value}
         onChange={onChange}
       />

@@ -2,7 +2,7 @@
 export const findWeatherIcon = (eachWeather: string) => {
   const weatherIcon: { [key: string]: string } = {
     Clear: 'Sunny',
-    Clouds: 'Cloud_day',
+    Clouds: 'Cloudy_day',
     Drizzle: 'Rain',
     Rain: 'Rain',
     Snow: 'Snow',

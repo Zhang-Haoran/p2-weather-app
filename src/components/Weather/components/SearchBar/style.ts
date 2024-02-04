@@ -7,10 +7,10 @@ export const Form = styled.form`
   position: relative;
   width: 30rem;
   min-height: 3rem;
-  margin: 0 auto 1.5rem auto;
   border-radius: 20px;
   font-family: cursive;
   transition: 0.1s;
+  margin: 0 2rem;
 `
 
 export const Icon = styled.span`

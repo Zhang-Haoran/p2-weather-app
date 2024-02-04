@@ -6,7 +6,6 @@ import Meta from './components/Meta/Meta'
 import bg from './images/Cloudy_day_background.png'
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ currentWeather }) => {
-  console.log(currentWeather)
   return (
     <Card img={bg}>
       <Title type="Subtitle">{currentWeather.date}</Title>
