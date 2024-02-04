@@ -6,6 +6,13 @@ npm i
 
 npm run dev
 
+# Tech Stack
+
+- Typescript
+- React.js
+- React router
+- Styled Component
+
 # P2 - Requirements
 
 ![requirement1](public/requirement1.png)
