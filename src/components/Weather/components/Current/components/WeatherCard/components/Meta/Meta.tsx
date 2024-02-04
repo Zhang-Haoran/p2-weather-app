@@ -19,7 +19,7 @@ const Meta: React.FC<MetaProps> = ({ currentWeather }) => {
       </Text>
       <Text type="Other">
         <Image src={PM} />
-        {currentWeather.lowestTemperature.toFixed(1)}&#176;
+        {currentWeather.lowestTemperature.toFixed(1)}μg
       </Text>
       <Text type="Other">
         <Image src={temperature} />
