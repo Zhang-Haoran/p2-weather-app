@@ -1,8 +1,8 @@
 import React from 'react'
-import PM from './img/PM.svg'
-import temperature from './img/temperature.svg'
-import wind from './img/wind.svg'
-import humidity from './img/humidity.svg'
+import PM from './images/PM.svg'
+import temperature from './images/temperature.svg'
+import wind from './images/wind.svg'
+import humidity from './images/humidity.svg'
 import { Card, Text, Image } from './style'
 import { MetaProps } from '../../../../../../../../types'
 
