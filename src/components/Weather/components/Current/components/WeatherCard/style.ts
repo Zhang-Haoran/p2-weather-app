@@ -11,7 +11,8 @@ export const Card = styled.div<BackgroundProps>`
 `
 
 export const Text = styled.p<StyleComponentProps>`
-  margin: 1rem;
+  color: white;
+  margin: 2rem;
   ${({ type }) =>
     type === 'Weather' &&
     css`
@@ -26,12 +27,14 @@ export const Text = styled.p<StyleComponentProps>`
   ${({ type }) =>
     type === 'Other' &&
     css`
+      align-self: center;
       font-size: 1.75rem;
     `}
 `
 
 export const Title = styled.h2<StyleComponentProps>`
-  margin: 0;
+  color: white;
+  margin: 1.5rem;
   ${({ type }) =>
     type === 'Title' &&
     css`

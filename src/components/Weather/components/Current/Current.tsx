@@ -3,6 +3,7 @@ import { Body, Container } from './style'
 import { CurrentProps } from '../../../../types'
 import WeatherCard from './components/WeatherCard/WeatherCard'
 const Current: React.FC<CurrentProps> = ({ currentWeather }) => {
+  console.log(currentWeather)
   return (
     <Container>
       <Body

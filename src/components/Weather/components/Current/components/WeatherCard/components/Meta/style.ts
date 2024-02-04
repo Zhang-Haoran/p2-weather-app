@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { StyleComponentProps } from '../../../../../../../../types'
 
 export const Card = styled.div<StyleComponentProps>`
+  margin-top: 2rem;
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
@@ -13,7 +14,7 @@ export const Card = styled.div<StyleComponentProps>`
   ${({ type }) =>
     type === 'Wind' &&
     css`
-      background-color: rgb(255, 255, 255, 0.2);
+      background-color: rgb(239, 237, 251);
       backdrop-filter: blur(10px);
     `}
 `

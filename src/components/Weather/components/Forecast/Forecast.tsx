@@ -6,7 +6,6 @@ import { Body, Card, Container, Text, WeatherIcon } from './style'
 import { ForecastProps } from '../../../../types'
 
 const Forecast: React.FC<ForecastProps> = ({ forecastWeather }) => {
-  console.log(forecastWeather)
   return (
     <Container>
       <Body>

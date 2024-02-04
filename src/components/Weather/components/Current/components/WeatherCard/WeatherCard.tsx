@@ -15,6 +15,10 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ currentWeather }) => {
       <Text type="Temperature">
         {currentWeather.currentTemperature.toFixed(1)}&#176;
       </Text>
+      <Text type="Other">
+        {currentWeather.highestTemperature.toFixed(1)}&#176; ~{' '}
+        {currentWeather.lowestTemperature.toFixed(1)}&#176;
+      </Text>
       <WeatherIcon
         src={`/src/assets/images/${findWeatherIcon(
           currentWeather.weather

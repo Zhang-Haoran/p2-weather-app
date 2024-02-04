@@ -10,20 +10,20 @@ const Meta: React.FC<MetaProps> = ({ currentWeather }) => {
   return (
     <Card type="Wind">
       <Text type="Other">
-        <Image src={temperature} />
-        {currentWeather.highestTemperature.toFixed(1)}&#176;
-      </Text>
-      <Text type="Other">
-        <Image src={PM} />
-        {currentWeather.lowestTemperature.toFixed(1)}&#176;
+        <Image src={wind} />
+        {currentWeather.windSpeed}mph
       </Text>
       <Text type="Other">
         <Image src={humidity} />
         {currentWeather.humidity}%
       </Text>
       <Text type="Other">
-        <Image src={wind} />
-        {currentWeather.windSpeed}mph
+        <Image src={PM} />
+        {currentWeather.lowestTemperature.toFixed(1)}&#176;
+      </Text>
+      <Text type="Other">
+        <Image src={temperature} />
+        {currentWeather.highestTemperature.toFixed(1)}&#176;
       </Text>
     </Card>
   )
