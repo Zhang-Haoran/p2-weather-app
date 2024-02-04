@@ -10,7 +10,6 @@ npm run dev
 
 - Typescript
 - React.js
-- React router
 - Styled Component
 
 # P2 - Requirements
