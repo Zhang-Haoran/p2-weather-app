@@ -16,8 +16,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 80%;
-  width: 80%;
   background-color: white;
   border-radius: 1.5rem;
 `

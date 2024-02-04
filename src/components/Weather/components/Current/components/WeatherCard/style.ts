@@ -1,22 +1,13 @@
 import styled, { css } from 'styled-components'
-import { StyleComponentProps } from '../../../../../../types'
+import { BackgroundProps, StyleComponentProps } from '../../../../../../types'
 
-export const Card = styled.div<StyleComponentProps>`
+export const Card = styled.div<BackgroundProps>`
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  ${({ type }) =>
-    type === 'Weather' &&
-    css`
-      display: flex;
-    `}
-  ${({ type }) =>
-    type === 'Wind' &&
-    css`
-      background-color: rgb(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-    `}
+  background: url(${({ img }) => img}) center;
+  background-size: cover;
 `
 
 export const Text = styled.p<StyleComponentProps>`
@@ -29,6 +20,7 @@ export const Text = styled.p<StyleComponentProps>`
   ${({ type }) =>
     type === 'Temperature' &&
     css`
+      align-self: center;
       font-size: 5rem;
     `}
   ${({ type }) =>
@@ -44,10 +36,14 @@ export const Title = styled.h2<StyleComponentProps>`
     type === 'Title' &&
     css`
       font-size: 3rem;
+      align-self: center;
     `}
   ${({ type }) =>
     type === 'Subtitle' &&
     css`
       font-size: 1.5rem;
     `}
+`
+export const WeatherIcon = styled.img`
+  align-self: center;
 `

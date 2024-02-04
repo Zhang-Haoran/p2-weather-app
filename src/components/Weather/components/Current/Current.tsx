@@ -5,7 +5,12 @@ import WeatherCard from './components/WeatherCard/WeatherCard'
 const Current: React.FC<CurrentProps> = ({ currentWeather }) => {
   return (
     <Container>
-      <Body>
+      <Body
+        style={{
+          backgroundImage:
+            'linear-gradient(152deg, #899bf0 1%, #3f55e4 54%, #3f55e4 96%)',
+        }}
+      >
         <WeatherCard currentWeather={currentWeather} />
       </Body>
     </Container>
