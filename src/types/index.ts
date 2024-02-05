@@ -61,3 +61,14 @@ export interface CurrentProps {
 export interface BackgroundProps {
   img: string
 }
+
+export interface ImageProps {
+  img: string
+  alt: string
+  className: string
+}
+
+export interface TextProps {
+  value: string
+  className: string
+}
