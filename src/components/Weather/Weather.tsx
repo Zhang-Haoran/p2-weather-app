@@ -50,12 +50,10 @@ const Weather = () => {
   return (
     <Background
       img={bg}
-      className={
-        'md:w-fit h-fit mx-auto rounded-3xl bg-white overflow-hidden shadow-blue-800 grid grid-cols-6 grid-rows-6'
-      }
+      className={'h-screen bg-cover flex items-center font-alimama'}
     >
-      {currentWeather && forecastWeather && (
-        <>
+      <Container className="md:w-fit h-fit mx-auto rounded-3xl bg-white overflow-hidden shadow-blue-800 grid grid-cols-6 grid-rows-6">
+        {currentWeather && forecastWeather && (
           <Container
             className="row-span-6 col-span-2 m-6 rounded-3xl  relative"
             style={{
@@ -65,8 +63,8 @@ const Weather = () => {
           >
             <Current currentWeather={currentWeather} />
           </Container>
-        </>
-      )}
+        )}
+      </Container>
     </Background>
   )
 }

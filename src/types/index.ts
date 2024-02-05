@@ -65,7 +65,7 @@ export interface BackgroundProps {
 export interface ImageProps {
   img: string
   alt: string
-  className: string
+  className?: string
 }
 
 export interface TextProps {
@@ -97,4 +97,11 @@ export interface ContainerProps {
   children: React.ReactNode
   className: string
   style?: React.CSSProperties
+}
+
+export interface ItemProps {
+  img: string
+  alt: string
+  className?: string
+  value: string
 }
