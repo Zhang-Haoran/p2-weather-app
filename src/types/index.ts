@@ -72,3 +72,29 @@ export interface TextProps {
   value: string
   className: string
 }
+
+export interface FormProps {
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+  children: React.ReactNode
+  className: string
+}
+
+export interface InputProps {
+  type: string
+  placeholder: string
+  value: string
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  className: string
+}
+
+export interface BackgroundProps {
+  img: string
+  children: React.ReactNode
+  className: string
+}
+
+export interface ContainerProps {
+  children: React.ReactNode
+  className: string
+  style?: React.CSSProperties
+}
