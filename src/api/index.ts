@@ -44,6 +44,7 @@ export async function getForecastWeatherFromAPI(searchValue: string) {
       .get(forecastWeatherURL)
       .then((result) => {
         const forecastWeatherArray: WeatherForecast[] = []
+        console.log(result)
         result.data.list.map((eachItem: WeatherForecastResponse) => {
           //构造需要的数据
           const forecastWeatherObject = {
@@ -52,6 +53,8 @@ export async function getForecastWeatherFromAPI(searchValue: string) {
             temperature: eachItem.main.temp,
             weather: eachItem.weather[0].main,
             weatherDescription: eachItem.weather[0].description,
+            highestTemperature: eachItem.main.temp_max,
+            lowestTemperature: eachItem.main.temp_min,
           }
           forecastWeatherArray.push(forecastWeatherObject)
           return forecastWeatherArray

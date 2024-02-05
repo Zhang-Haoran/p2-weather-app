@@ -4,8 +4,8 @@ import { getCurrentWeatherFromAPI, getForecastWeatherFromAPI } from '../../api'
 import { CurrentWeather, WeatherForecast } from '../../types'
 import Background from '../shared/Background/Background'
 import bg from '../../assets/images/bg.png'
-import Container from '../shared/Container/Container'
 import Current from './components/Current'
+import Forecast from './components/Forecast'
 
 // 主页组件
 const Weather = () => {
@@ -52,9 +52,9 @@ const Weather = () => {
       img={bg}
       className={'h-screen bg-cover flex items-center font-alimama'}
     >
-      <Container className="md:w-fit h-fit mx-auto rounded-3xl bg-white overflow-hidden shadow-blue-800 grid grid-cols-6 grid-rows-6">
-        {currentWeather && forecastWeather && (
-          <Container
+      {currentWeather && forecastWeather && (
+        <div className="md:w-fit h-fit mx-auto rounded-3xl bg-white overflow-hidden shadow-blue-800 grid grid-cols-6 grid-rows-6">
+          <div
             className="row-span-6 col-span-2 m-6 rounded-3xl  relative"
             style={{
               backgroundImage:
@@ -62,9 +62,12 @@ const Weather = () => {
             }}
           >
             <Current currentWeather={currentWeather} />
-          </Container>
-        )}
-      </Container>
+          </div>
+          <div className="row-span-3 col-span-4  m-6">
+            <Forecast forecastWeather={forecastWeather} />
+          </div>
+        </div>
+      )}
     </Background>
   )
 }

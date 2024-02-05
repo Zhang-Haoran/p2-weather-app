@@ -1,6 +1,5 @@
 import React from 'react'
 import { CurrentProps } from '../../../types'
-import Container from '../../shared/Container/Container'
 import bg from '../../../assets/images/Cloudy_day_background.png'
 import Image from '../../shared/Image/Image'
 import Text from '../../shared/Text/Text'
@@ -13,7 +12,7 @@ import temperature from '../../../assets/images/temperature.svg'
 
 const Current: React.FC<CurrentProps> = ({ currentWeather }) => {
   return (
-    <Container className="flex flex-col items-center space-y-6 shadow-md mb-4">
+    <div className="flex flex-col items-center space-y-6 shadow-md mb-4">
       <Image
         img={bg}
         alt={'weather image'}
@@ -64,7 +63,7 @@ const Current: React.FC<CurrentProps> = ({ currentWeather }) => {
           className="w-6 h-6"
         />
       </div>
-    </Container>
+    </div>
   )
 }
 export default Current

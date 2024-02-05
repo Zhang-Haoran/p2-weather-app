@@ -4,12 +4,16 @@ export interface WeatherForecast {
   temperature: number
   weather: string
   weatherDescription: string
+  highestTemperature: string
+  lowestTemperature: string
 }
 
 export interface WeatherForecastResponse {
   dt_txt: string
   main: {
     temp: number
+    temp_max: number
+    temp_min: number
   }
   weather: [
     {
@@ -70,13 +74,13 @@ export interface ImageProps {
 
 export interface TextProps {
   value: string
-  className: string
+  className?: string
 }
 
 export interface FormProps {
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
   children: React.ReactNode
-  className: string
+  className?: string
 }
 
 export interface InputProps {
@@ -84,18 +88,18 @@ export interface InputProps {
   placeholder: string
   value: string
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  className: string
+  className?: string
 }
 
 export interface BackgroundProps {
   img: string
   children: React.ReactNode
-  className: string
+  className?: string
 }
 
 export interface ContainerProps {
   children: React.ReactNode
-  className: string
+  className?: string
   style?: React.CSSProperties
 }
 
@@ -104,4 +108,12 @@ export interface ItemProps {
   alt: string
   className?: string
   value: string
+}
+
+export interface CardProps {
+  weekday: string
+  date: string
+  img: string
+  highestTemperature: string
+  lowestTemperature: string
 }
