@@ -12,6 +12,7 @@ export async function getCurrentWeatherFromAPI(searchValue: string) {
       .get(currentWeatherURL)
       .then((result) => {
         const data = result.data
+        console.log(data)
         const dateString = new Date().toString()
         //处理日期格式
         const date = `${dateString.split(' ')[0]} ${dateString.split(' ')[1]} ${

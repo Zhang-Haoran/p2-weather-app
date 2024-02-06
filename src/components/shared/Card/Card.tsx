@@ -14,7 +14,7 @@ const Card: React.FC<CardProps> = ({
       <Text value={weekday} className="font-bold  text-xl" />
       <Text value={date} />
       <Image img={img} alt={'weather icon'} />
-      <Text value={`${highestTemperature}° ~ ${lowestTemperature}°`} />
+      <Text value={`${lowestTemperature}° ~ ${highestTemperature}°`} />
     </div>
   )
 }

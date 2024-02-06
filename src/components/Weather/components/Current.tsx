@@ -12,7 +12,7 @@ import temperature from '../../../assets/images/temperature.svg'
 
 const Current: React.FC<CurrentProps> = ({ currentWeather }) => {
   return (
-    <div className="flex flex-col items-center space-y-6 shadow-md mb-4">
+    <div className="flex flex-col items-center space-y-6 mb-4">
       <Image
         img={bg}
         alt={'weather image'}
@@ -28,9 +28,9 @@ const Current: React.FC<CurrentProps> = ({ currentWeather }) => {
         className={'text-slate-200 text-6xl font-bold'}
       />
       <Text
-        value={`${currentWeather.highestTemperature.toFixed(
+        value={`${currentWeather.lowestTemperature.toFixed(
           1
-        )}° ~ ${currentWeather.lowestTemperature.toFixed(1)}°`}
+        )}° ~ ${currentWeather.highestTemperature.toFixed(1)}°`}
         className={'text-white'}
       />
       <Image

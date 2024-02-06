@@ -4,8 +4,8 @@ export interface WeatherForecast {
   temperature: number
   weather: string
   weatherDescription: string
-  highestTemperature: string
-  lowestTemperature: string
+  highestTemperature: number
+  lowestTemperature: number
 }
 
 export interface WeatherForecastResponse {
@@ -114,6 +114,6 @@ export interface CardProps {
   weekday: string
   date: string
   img: string
-  highestTemperature: string
-  lowestTemperature: string
+  highestTemperature: number
+  lowestTemperature: number
 }
