@@ -12,7 +12,6 @@ export async function getCurrentWeatherFromAPI(searchValue: string) {
       .get(currentWeatherURL)
       .then((result) => {
         const data = result.data
-        console.log(data)
         const dateString = new Date().toString()
         //处理日期格式
         const date = `${dateString.split(' ')[0]} ${dateString.split(' ')[1]} ${
@@ -33,7 +32,13 @@ export async function getCurrentWeatherFromAPI(searchValue: string) {
         }
         resolve(currentWeather)
       })
-      .catch(() => {})
+      .catch((e: Error) => {
+        alert(
+          `Invalid input 
+          ${e}
+        `
+        )
+      })
   })
 }
 
@@ -45,7 +50,6 @@ export async function getForecastWeatherFromAPI(searchValue: string) {
       .get(forecastWeatherURL)
       .then((result) => {
         const forecastWeatherArray: WeatherForecast[] = []
-        console.log(result)
         result.data.list.map((eachItem: WeatherForecastResponse) => {
           //构造需要的数据
           const forecastWeatherObject = {

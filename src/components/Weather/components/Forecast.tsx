@@ -5,6 +5,7 @@ import {
   findWeatherIcon,
   getForecastWeatherWithUniqueDate,
 } from '../../../utils'
+import { v4 as uuidv4 } from 'uuid'
 
 const Forecast: React.FC<ForecastProps> = ({ forecastWeather }) => {
   return (
@@ -14,7 +15,7 @@ const Forecast: React.FC<ForecastProps> = ({ forecastWeather }) => {
         .map((data) => {
           return (
             <Card
-              key={data.date + data.time}
+              key={uuidv4()}
               weekday={new Date(data.date.substr(5, 5)).toLocaleDateString(
                 'en-US',
                 { weekday: 'long' }

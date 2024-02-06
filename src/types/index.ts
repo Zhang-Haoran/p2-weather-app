@@ -46,18 +46,6 @@ export interface CurrentWeather {
   date: string
 }
 
-export interface WeatherCardProps {
-  currentWeather: CurrentWeather
-}
-
-export interface StyleComponentProps {
-  type: string
-}
-
-export interface MetaProps {
-  currentWeather: CurrentWeather
-}
-
 export interface CurrentProps {
   currentWeather: CurrentWeather
 }
@@ -116,4 +104,8 @@ export interface CardProps {
   img: string
   highestTemperature: number
   lowestTemperature: number
+}
+
+export interface SearchHistoryProps {
+  searchHistory: CurrentWeather[]
 }
