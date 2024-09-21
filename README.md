@@ -1,6 +1,9 @@
+# Demo
+https://zhang-haoran.github.io/p2-weather-app/
+
 # How to set up
 
-git clone
+git clone https://github.com/Zhang-Haoran/p2-weather-app.git
 
 npm i
 
