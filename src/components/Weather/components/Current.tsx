@@ -3,7 +3,7 @@ import { CurrentProps } from '../../../types'
 import bg from '../../../assets/images/Cloudy_day_background.png'
 import Image from '../../shared/Image/Image'
 import Text from '../../shared/Text/Text'
-import { findWeatherIcon } from '../../../utils'
+import { findWeatherIcon, formatDate } from '../../../utils'
 import Item from '../../shared/Item/Item'
 import wind from '../../../assets/images/wind.svg'
 import humidity from '../../../assets/images/humidity.svg'
@@ -18,20 +18,20 @@ const Current: React.FC<CurrentProps> = ({ currentWeather }) => {
         alt={'weather image'}
         className={'absolute top-0 right-0'}
       />
-      <Text value={currentWeather.date} className={'text-white'} />
+      <Text value={formatDate(currentWeather.date, false)} className={'text-white self-start pl-6'} />
       <Text
         value={`${currentWeather.city},${currentWeather.country}`}
         className={'text-white text-3xl font-bold'}
       />
       <Text
         value={`${currentWeather.currentTemperature.toFixed(1)}°`}
-        className={'text-slate-200 text-6xl font-bold'}
+        className={'text-slate-200 text-8xl font-bold'}
       />
       <Text
         value={`${currentWeather.lowestTemperature.toFixed(
           1
         )}° ~ ${currentWeather.highestTemperature.toFixed(1)}°`}
-        className={'text-white'}
+        className={'text-white text-2xl'}
       />
       <Image
         img={findWeatherIcon(currentWeather.weather)}
@@ -39,28 +39,29 @@ const Current: React.FC<CurrentProps> = ({ currentWeather }) => {
       />
       <div className="flex justify-between bg-slate-50 rounded-2xl w-5/6 p-4">
         <Item
-          img={wind}
-          alt={'wind icon'}
-          value={`${currentWeather.windSpeed}mph`}
-          className="w-6 h-6"
-        />
-        <Item
           img={humidity}
           alt={'humidity icon'}
           value={`${currentWeather.humidity}%`}
-          className="w-6 h-6"
+          className="w-6 h-6 self-center"
         />
+        <Item
+          img={wind}
+          alt={'wind icon'}
+          value={`${currentWeather.windSpeed}mph`}
+          className="w-6 h-6 self-center"
+        />
+
         <Item
           img={PM}
           alt={'PM icon'}
           value={`${currentWeather.lowestTemperature.toFixed(1)}μg`}
-          className="w-6 h-6"
+          className="w-6 h-6 self-center"
         />
         <Item
           img={temperature}
           alt={'temperature icon'}
           value={`${currentWeather.highestTemperature.toFixed(1)}°`}
-          className="w-6 h-6"
+          className="w-6 h-6 self-center"
         />
       </div>
     </div>

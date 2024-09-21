@@ -48,6 +48,30 @@ const Weather = () => {
         weatherObject as CurrentWeather,
       ])
     })
+
+    getCurrentWeatherFromAPI('Sydney,AU').then((weatherObject) => {
+      setCurrentWeather(weatherObject as CurrentWeather)
+      setSearchHistory((prevSearchHistory) => [
+        ...prevSearchHistory,
+        weatherObject as CurrentWeather,
+      ])
+    })
+
+    getCurrentWeatherFromAPI('Perth,AU').then((weatherObject) => {
+      setCurrentWeather(weatherObject as CurrentWeather)
+      setSearchHistory((prevSearchHistory) => [
+        ...prevSearchHistory,
+        weatherObject as CurrentWeather,
+      ])
+    })
+
+    getCurrentWeatherFromAPI('Gold Coast,AU').then((weatherObject) => {
+      setCurrentWeather(weatherObject as CurrentWeather)
+      setSearchHistory((prevSearchHistory) => [
+        ...prevSearchHistory,
+        weatherObject as CurrentWeather,
+      ])
+    })
     getForecastWeatherFromAPI('Melbourne,AU').then((weatherObject) => {
       setForecastWeather(weatherObject as WeatherForecast[])
     })

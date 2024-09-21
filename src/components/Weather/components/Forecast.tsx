@@ -3,6 +3,7 @@ import { ForecastProps } from '../../../types'
 import Card from '../../shared/Card/Card'
 import {
   findWeatherIcon,
+  formatDate,
   getForecastWeatherWithUniqueDate,
 } from '../../../utils'
 import { v4 as uuidv4 } from 'uuid'
@@ -20,13 +21,7 @@ const Forecast: React.FC<ForecastProps> = ({ forecastWeather }) => {
                 'en-US',
                 { weekday: 'long' }
               )}
-              date={new Date(data.date.substr(5, 5)).toLocaleDateString(
-                'en-US',
-                {
-                  month: 'long',
-                  day: '2-digit',
-                }
-              )}
+              date={formatDate(data.date.substr(5, 5), true)}
               img={findWeatherIcon(data.weather)}
               highestTemperature={data.highestTemperature}
               lowestTemperature={data.lowestTemperature}

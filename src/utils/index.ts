@@ -6,7 +6,6 @@ import Hail from '../assets/images/Hail.png'
 import Cloudy from '../assets/images/Cloudy.png'
 import { WeatherForecast } from '../types'
 
-//根据天气预报的气象信息 找到对应的天气图标
 export const findWeatherIcon = (eachWeather: string) => {
   const weatherIcon: { [key: string]: string } = {
     Clear: Sunny,
@@ -29,4 +28,28 @@ export const getForecastWeatherWithUniqueDate = (
     }
     return accumulator
   }, [])
+}
+
+export const formatDate = (dateString: string, onlyDayMonth: boolean  = false) => {
+  const date = new Date(dateString)
+
+  const daysOfWeek = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ]
+
+  const dayOfWeek = daysOfWeek[date.getDay()]
+  const day = date.getDate()
+  const month = date.toLocaleString('default', { month: 'long' })
+
+  const currentTime = new Date()
+  const hours = currentTime.getHours().toString().padStart(2, '0');
+  const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+  
+  return onlyDayMonth ? `${day} ${month}` : `${day} ${month}, ${dayOfWeek} ${hours}:${minutes}`;
 }
